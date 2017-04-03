@@ -1,5 +1,7 @@
 <h1>Marketplace</h1>
 
-<p>
-  stuff
-</p>
+<div *ngFor="let album of albums">
+  <div class="panel-body">
+    <h3><em>{{album.title}}</em> by {{album.artist}}</h3>
+  </div>
+</div>
