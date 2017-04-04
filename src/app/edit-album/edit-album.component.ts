@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Album } from '../album.model';
 import { AlbumService } from '../album.service';
 
 @Component({
