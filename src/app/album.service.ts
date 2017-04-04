@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Album } from './album.model';
-// import { ALBUM } from './mock-albums';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Injectable()
@@ -21,6 +20,13 @@ export class AlbumService {
 
   getAlbumById(albumId: string) {
     return this.angularFire.database.object('albums/' + albumId)
+  }
+
+  updateAlbum(localUpdatedAlbum){
+    var albumEntryInFirebase = this.getAlbumById(localUpdatedAlbum.$key);
+    albumEntryInFirebase.update({title: localUpdatedAlbum.title,
+                                artist: localUpdatedAlbum.artist,
+                                description: localUpdatedAlbum.description});
   }
 
 }
