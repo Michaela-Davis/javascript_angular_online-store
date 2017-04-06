@@ -1,6 +1,6 @@
 <h1>Marketplace</h1>
 
-<div *ngFor="let album of albums | async" class="panel panel-default" >
+<div *ngFor="let album of albums | async | artistSort:sortValue" class="panel panel-default" >
   <div class="panel-body">
     <h3 (click)="goToDetailPage(album)"><em>{{album.title}}</em> by {{album.artist}}</h3>
     <div *ngIf="currentRoute === '/admin'">

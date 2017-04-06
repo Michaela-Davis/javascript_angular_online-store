@@ -3,6 +3,7 @@ import { Album } from '../album.model';
 import { Router } from '@angular/router';
 import { AlbumService } from '../album.service';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { ArtistSortPipe } from './../artist-sort.pipe';
 
 @Component({
   selector: 'app-marketplace',
@@ -13,7 +14,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class MarketplaceComponent implements OnInit {
   albums: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
-
+  sortValue = "Ani DiFranco";
   constructor(private router: Router, private albumService: AlbumService) {}
 
   ngOnInit() {
@@ -22,6 +23,8 @@ export class MarketplaceComponent implements OnInit {
 
   goToDetailPage(clickedAlbum) {
     this.router.navigate(['albums', clickedAlbum.$key]);
-  };
+  }
+
+
 
 }
