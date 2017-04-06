@@ -14,7 +14,7 @@ import { ArtistSortPipe } from './../artist-sort.pipe';
 export class MarketplaceComponent implements OnInit {
   albums: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
-  sortValue: string = "Ani DiFranco";
+  sortValue: string = "All";
 
 
   constructor(private router: Router, private albumService: AlbumService) {}
