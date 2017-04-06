@@ -1,5 +1,12 @@
 <h1>Marketplace</h1>
 
+<select (change)="onChange($event.target.value)">
+  <option value="All" selected="selected">All</option>
+  <option value="Ani DiFranco">Ani DiFranco</option>
+  <option value="Jimi Hendrix">Jimi Hendrix</option>
+  <option value="Pink Floyd">Pink Floyd</option>
+</select>
+
 <div *ngFor="let album of albums | async | artistSort:sortValue" class="panel panel-default" >
   <div class="panel-body">
     <h3 (click)="goToDetailPage(album)"><em>{{album.title}}</em> by {{album.artist}}</h3>

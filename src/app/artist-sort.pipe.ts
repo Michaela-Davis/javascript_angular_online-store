@@ -9,7 +9,7 @@ export class ArtistSortPipe implements PipeTransform {
     if(input) {
       let output: any[] = [];
       input.forEach(function(album) {
-        if (album.artist === sortValue ) {
+       if (album.artist === sortValue || sortValue === 'All') {
           output.push(album);
         }
       });

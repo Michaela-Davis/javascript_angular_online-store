@@ -14,7 +14,9 @@ import { ArtistSortPipe } from './../artist-sort.pipe';
 export class MarketplaceComponent implements OnInit {
   albums: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
-  sortValue = "Ani DiFranco";
+  sortValue: string = "Ani DiFranco";
+
+
   constructor(private router: Router, private albumService: AlbumService) {}
 
   ngOnInit() {
@@ -25,6 +27,9 @@ export class MarketplaceComponent implements OnInit {
     this.router.navigate(['albums', clickedAlbum.$key]);
   }
 
+  onChange(optionFromMenu) {
+    this.sortValue = optionFromMenu;
+  }
 
 
 }
